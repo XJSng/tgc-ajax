@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Question 5</title>
-  </head>
-  <body>
-    <h1>Array of JSON Objects</h1>
-    <button id="load-users-btn">Load Users</button>
 
-    <div id="all-users"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Question 5</title>
+</head>
 
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="script.js"></script>
-  </body>
+<body>
+  <h1>Array of JSON Objects</h1>
+  <label>Enter a User Id</label>
+  <input id="user-search" type="text"></input>
+  <button id="user-search-btn" >Search</button>
+  <button id="load-users-btn">Load All Users</button>
+  <div id="all-users"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
 </html>

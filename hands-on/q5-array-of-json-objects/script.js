@@ -6,7 +6,13 @@
 document.addEventListener("DOMContentLoaded", async function () {
     let loadUserBtn = document.querySelector("#load-users-btn")
     loadUserBtn.addEventListener("click", function () {
+        document.querySelector("#all-users").innerHTML = ""
         return loadData()
+    })
+    let searchBtn = document.querySelector("#user-search-btn")
+    searchBtn.addEventListener("click", function () {
+        document.querySelector("#all-users").innerHTML = "" 
+        return searchById()
     })
 })
 
@@ -24,4 +30,21 @@ async function loadData() {
     }
 
     //console.log(response)
+}
+
+// function that returns firstName and LastName when user search for ID
+async function searchById() {
+    const response = await axios.get("users.json")
+    const userData = response.data.users
+    const userInput = document.querySelector("#user-search")
+
+        for (user of userData) {
+        if (userInput.value == user.userId) {
+            let firstName = user.firstName
+            let lastName = user.lastName
+            const newDiv = document.createElement("div")
+            newDiv.innerHTML = `<p><b>Id:</b>${user.userId}, <b>First Name:</b> ${firstName}, <b>Last Name:</b> ${lastName}</p>`
+        document.querySelector("#all-users").appendChild(newDiv)
+        }
+        }
 }
